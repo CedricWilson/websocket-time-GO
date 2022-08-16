@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      p {
+        text-align: center;
+        font-size: 40px;
+      }
+    </style>
+    <title>Websockets!</title>
+    <script>
+      websocket = new WebSocket("ws://localhost:8080/time");
+
+      websocket.onmessage = function (event) {
+        var msg = event.data;
+        document.getElementById("console").innerHTML = msg;
+      };
+    </script>
+  </head>
+
+  <body>
+    <p id="console"></p>
+  </body>
+</html>
